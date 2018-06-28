@@ -6,7 +6,7 @@
 <h2>Create Player</h2>
 
 <form action="~/Home/SuccessfullyCreatedChar/" method="post">
-    Distribute 100 Skill Points into the the stats below to build your character!<br /><br />
+    Distribute 100 Skill Points into the the stats below to build your character how you want! You Will Not Be Able to Submit till 100 Points Distributed<br />
 
     <input type="hidden" name="CharName" value="@ViewBag.CharName" />
     <input type="hidden" name="CharHeight" value="@ViewBag.CharHeight" />
@@ -24,6 +24,15 @@
 
     <input type="submit" name="submit" value="Submit SkillPoint Distribution" onclick="return Check()" /><br />
 </form>
+    ThreePoint %: <input type="number" id="ThreePointPerc" name="ThreePoint" min="@ViewBag.ThreePointWH" max="75" value="@ViewBag.ThreePointWH" /><br />
+
+    FieldGoal %:<input type="number" id="FieldGoatPerc" name="FieldGoat" min="@ViewBag.FieldGoalWH" max="75" value="@ViewBag.FieldGoalWH" /><br />
+
+    Paint %:<input type="number" id="PaintPerc" name="Paint" min="@ViewBag.PaintWH" max="75" value="@ViewBag.PaintWH" /><br />
+
+    Steal %:<input type="number" id="StealPerc" name="Steal" min="@ViewBag.StealWH" max="75" value="@ViewBag.StealWH" /><br />
+
+    Block %:<input type="number" id="BlockPerc" name="Block" min="@ViewBag.BlockWH" max="75" value="@ViewBag.BlockWH" /><br />
 
 <!DOCTYPE html>
 <html>

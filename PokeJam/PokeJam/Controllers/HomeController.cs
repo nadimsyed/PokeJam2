@@ -125,7 +125,7 @@ namespace PokeJam.Controllers
             ViewBag.Tournaments = tournaments;
 
 
-            return RedirectToAction("CreatePlayerStart");
+            return View();
         }
 
         public ActionResult SuccessfullyCreatedChar(string CharName, int? CharHeight, int? CharWeight, int? ThreePoint, int? FieldGoat, int? Paint, int? Steal, int? Block)
@@ -190,8 +190,6 @@ namespace PokeJam.Controllers
                     track[4] = false;
                     pokeTrack[4] = "N/A";
                     Methods.AddTournament(TierCount, track, pokeTrack, UserId);
-
-
                 }
                 if (TierCount == 3)
                 {
@@ -205,7 +203,6 @@ namespace PokeJam.Controllers
                     track[4] = false;
                     pokeTrack[4] = "N/A";
                     Methods.AddTournament(TierCount, track, pokeTrack, UserId);
-
                 }
                 if (TierCount == 2)
                 {
@@ -221,7 +218,6 @@ namespace PokeJam.Controllers
                     track[4] = false;
                     pokeTrack[4] = "N/A";
                     Methods.AddTournament(TierCount, track, pokeTrack, UserId);
-
                 }
                 if (TierCount == 1)
                 {
@@ -242,7 +238,6 @@ namespace PokeJam.Controllers
             }
             catch (Exception)
             {
-
                 return RedirectToAction("Index");
             }
 
