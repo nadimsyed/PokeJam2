@@ -1,12 +1,18 @@
 ﻿@{
     ViewBag.Title = "You lose";
 }
-<!--Need Logout button-->
-<h2>You have been unsuccessful in beating the might Pokemon</h2>
-<!--Need table for tournement results-->
+<h2>You have been unsuccessful in beating the Mighty Pokemon!</h2>
 
-<a href="~/Home/PokeJam/">Back to PokeJam</a>
+
+<button class="btn-danger"><a href="~/Home/PokeJam/">Back to PokeJam</a></button>
 
 <center>
-    <img src="~/Content/a13.jpg" height="430" width="550" />
+    <img src="~/Content/a13.jpg" height="400" width="500" />
 </center>
+
+<style>
+    .btn-danger {
+        height: 50px;
+        width: 75px;
+    }
+</style>

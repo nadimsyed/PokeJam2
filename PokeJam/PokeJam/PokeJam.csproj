@@ -269,12 +269,12 @@
     <Content Include="Content\Charizard.png" />
     <Content Include="Content\Machamp.png" />
     <Content Include="Content\Magmar.png" />
-    <Content Include="Content\MewTwo.gif" />
     <Content Include="Content\Next.png" />
     <Content Include="Content\Pokebackground.css" />
     <Content Include="Content\Pokebackground1.css" />
     <Content Include="Content\pokeball.png" />
     <Content Include="Content\Primeape.png" />
+    <Content Include="Content\trophy.png" />
     <Content Include="Content\Zapdos.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
