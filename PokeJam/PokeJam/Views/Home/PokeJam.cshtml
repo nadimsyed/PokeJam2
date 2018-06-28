@@ -3,20 +3,83 @@
     ViewBag.Title = "PokeJam";
 }
 
-<h2>PokeJam</h2>
-@*TODO:INSERT IMAGE HERE*@
+<img src="~/Content/a16.jpg" height="400" width="1200"/>
 
-<a href="~/Home/Rules/">Rules</a>
-<a href="~/Home/ViewStats/">View Stats</a>
-<a href="~/Home/YourTournamentHistory/">Your Tournament History</a>
-<a href="~/Home/AllTournamentHistory/">All Tournament History</a>
-<a href="~/Home/Index/">Choose Another Character</a>
+<br />
+<html>
+<head>
+    <style>
+        .button {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <button class="button"><a href="~/Home/Rules/">Rules</a></button>
+        <button class="button button2"><a href="~/Home/ViewStats/">View Stats</a></button>
+        <button class="button button3"><a href="~/Home/YourTournamentHistory/">Your Tournament History</a></button>
+        <button class="button button4"><a href="~/Home/AllTournamentHistory/">All Tournament History</a></button>
+        <button class="button button5"><a href="~/Home/Index/">Choose Another Character</a></button>
+    </center>
+</body>
+</html>
 
-<form action="~/GamePlay/SinglePlayer/" method="post">
-    <input type="submit" name="play" value="Single" />
-</form>
-<form action="~/GamePlay/Tier1/" method="post">
-    <input type="submit" name="play" value="Tournament" />
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-@*TODO:INSERT IMAGE HERE*@
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 300px; /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <img src="~/Content/a14.jpg" style="height: 300px; width:auto;" />
+           
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <form action="~/GamePlay/SinglePlayer/" method="post">
+                <input type="submit" name="play" value="Single" />
+            </form>
+            <form action="~/GamePlay/Tier1/" method="post">
+                <input type="submit" name="play" value="Tournament" />
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

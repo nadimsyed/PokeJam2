@@ -2,20 +2,67 @@
 @{
     ViewBag.Title = "CreatePlayerStart";
 }
+<br />
+<br />
+    <h2>Create Your Player!</h2>
+    <form action="~/Home/CreatePlayer/" method="post">
+            <label>Enter your character's name:</label>
+            <input type="text" name="CharName" value="Name">
+            <br>
+            <br>
+            <label>Enter your character's height in inches (60 - 96):</label>
+            <input type="number" name="CharHeight" min="60" max="96" value="60" />
+            <br />
+            <br />
+            <br />
+            <label>Enter your characters weight in pounds(130 - 300):</label>
+            <input type="number" name="CharWeight" min="130" max="300" value="130" />
+            <br><br>
+            <input type="submit" name="submit" value="Submit" />
+    </form>
 
-<h3>You have successfully created your account!</h3>
-<br /><br />
-<h2>Create Your Player!</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-<form action="~/Home/CreatePlayer/" method="post">
-    What is your character's name?  <input type="text" name="CharName" /><br />
-    What is your character's height in inches? (60 - 96) <input type="number" name="CharHeight" min="60" max="96" value="60"/><br />
-    What is your character's weigh in pounds? (130 - 300) <input type="number" name="CharWeight" min="130" max="300" value="130"/><br />
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
 
-    <input type="submit" name="submit" value="Submit" />
-</form>
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
 
+        .container {
+            border-radius: 5px;
+            padding: 20px;
+        }
+    </style>
+</head>
 
+</html>
 
-
+<center>
+    <img src="~/Content/Magmar.png" />
+</center>

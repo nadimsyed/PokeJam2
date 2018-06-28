@@ -246,10 +246,34 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\A1.jpg" />
+    <Content Include="Content\A10.jpg" />
+    <Content Include="Content\a11.jpg" />
+    <Content Include="Content\a12.jpg" />
+    <Content Include="Content\a13.jpg" />
+    <Content Include="Content\a14.jpg" />
+    <Content Include="Content\a16.jpg" />
+    <Content Include="Content\A2 copy.jpg" />
+    <Content Include="Content\A3.jpg" />
+    <Content Include="Content\a4.jpg" />
+    <Content Include="Content\a5.jpg" />
+    <Content Include="Content\a6.jpg" />
+    <Content Include="Content\A7.jpg" />
+    <Content Include="Content\a8.jpg" />
+    <Content Include="Content\Blastoise.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Charizard.png" />
+    <Content Include="Content\Image uploaded from iOS.gif" />
+    <Content Include="Content\Machamp.png" />
+    <Content Include="Content\Magmar.png" />
+    <Content Include="Content\Next.png" />
+    <Content Include="Content\Pokebackground.css" />
+    <Content Include="Content\Pokebackground1.css" />
+    <Content Include="Content\pokeball.png" />
+    <Content Include="Content\Primeape.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -292,6 +316,7 @@
     <Content Include="Models\PokeJam.edmx.diagram">
       <DependentUpon>PokeJam.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\PokeJam - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

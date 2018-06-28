@@ -24,7 +24,7 @@ namespace PokeJam
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/Pokebackground1.css",
                       "~/Content/site.css"));
         }
     }

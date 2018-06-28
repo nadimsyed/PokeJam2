@@ -1,12 +1,12 @@
 ﻿@{
     ViewBag.Title = "Rules";
 }
-<h2>PokeJam Rules</h2>
+<center>
+    <h2>PokeJam Rules</h2>
+</center>
 <div style="font-family: monospace; color: red;">
     <p>
-        Have you ever been bored? Wondering if there was a fun game you can play to kill some time?
-        Well, be bored no more! We the PokeJam developers have a solution for you.
-        <br />
+        
         <br />
         Welcome to the official PokeJam game, where you get to play basetball against any Pokemon of your choice!
         Thats right, BASKETBALL with a POKEMON. Big Pokemon, small Pokemon, fiery Pokemon, grass Pokemon, you can play against ANY Pokemon.
@@ -29,6 +29,59 @@
         <br />
     </p>
 </div>
-<center>
-    <a href="~/Home/PokeJam/">Back</a>
-</center>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            font-family: white;
+            color: white;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+
+                .button span:after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+
+            .button:hover span {
+                padding-right: 25px;
+            }
+
+                .button:hover span:after {
+                    opacity: 1;
+                    right: 0;
+                }
+    </style>
+</head>
+
+<body>
+    <center>
+        <button class="button" style="vertical-align:middle"><span><a href="~/Home/PokeJam/">Back</a></span></button>
+    </center>
+</body>
+</html>
+
+

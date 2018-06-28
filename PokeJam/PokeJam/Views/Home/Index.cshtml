@@ -5,7 +5,80 @@
 <h2>@ViewBag.Error</h2>
 <h2>@ViewBag.ErrorDescription</h2>
 
-<a href="~/Home/CreatePlayerStart">Create</a>
+<html>
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h2>Here's an example of what your player can look like:</h2>
+    </center>
+    <table>
+        <tr>
+            <th>NBA Star</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Three-Point</th>
+            <th>Mid-Range</th>
+            <th>Paint</th>
+            <th>Steal</th>
+            <th>Block</th>
+        </tr>
+        <tr>
+            <td>Lebron James</td>
+            <td>80</td>
+            <td>250</td>
+            <td>60</td>
+            <td>60</td>
+            <td>65</td>
+            <td>63</td>
+            <td>60</td>
+        </tr>
+        <tr>
+            <td>Stephen Curry</td>
+            <td>75</td>
+            <td>190</td>
+            <td>67</td>
+            <td>60</td>
+            <td>45</td>
+            <td>58</td>
+            <td>33</td>
+        </tr>
+        <tr>
+            <td>James Harden</td>
+            <td>77</td>
+            <td>220</td>
+            <td>62</td>
+            <td>58</td>
+            <td>50</td>
+            <td>60</td>
+            <td>40</td>
+        </tr>
+    </table>
+    <br />
+    <br />
+
+</body>
+</html>
+
+<button type="button" ><a href="~/Home/CreatePlayerStart">Create</a></button>
+
 <table class="table">
     <tr>
         <th>
@@ -71,3 +144,4 @@
                 </tr>
             }
 </table>
+
