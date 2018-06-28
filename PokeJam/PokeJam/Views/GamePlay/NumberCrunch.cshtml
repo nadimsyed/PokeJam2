@@ -18,81 +18,123 @@ else if (ViewBag.Over == "yes")
 
 @if ((string)Session["Winner"] == "Player")
 {
-    <table class="table table-bordered">
+    <table id="poop"class="table table-bordered">
         <tr>
-            <th>Play's for Player</th>
-            <th>Total Points For Player at end of Quarter</th>
             <th>Play's for Pokemon</th>
-            <th>Total Points For Pokemon at end of Quarter</th>
+            <th>Play's for Player</th>
         </tr>
-        @foreach (var item in ViewBag.Player)
+        @for(int i = 0; i < ViewBag.Player.Count; i++)
         {
             <tr>
-                <td>@item</td>
+                <td>@ViewBag.Player[i]</td>
+                <td>@ViewBag.Computer[i]</td>
             </tr>
-
         }
-        <tr>
-            <td>@Session["User"]</td>
-        </tr>
-
-        @foreach (var item in ViewBag.Computer)
-        {
+       </table>
+        <table id="poop" class="table table-bordered">
             <tr>
-
-                <td>@item</td>
+                <th>Total Points For Player at end of Quarter</th>
+                <th>Total Points For Pokemon at end of Quarter</th>
             </tr>
-
-        }
         <tr>
             <td>@Session["Comp"]</td>
+            <td>@Session["User"]</td>
         </tr>
-
     </table>
 }
 else if ((string)Session["Winner"] == "Computer")
 {
-<table class="table table-bordered">
+<table id="poop"class="table table-bordered">
     <tr>
         <th>Play's for Player</th>
-        <th>Total Points For Player at end of Quarter</th>
         <th>Play's for Pokemon</th>
-        <th>Total Points For Pokemon at end of Quarter</th>
     </tr>
-    @foreach (var item in ViewBag.Computer)
+    @for (int i = 0; i < ViewBag.Player.Count; i++)
     {
         <tr>
+            <td>@ViewBag.Player[i]</td>
+            <td>@ViewBag.Computer[i]</td>
 
-            <td>@item</td>
         </tr>
-
     }
+  </table>
+  <table id="poop"class="table table-bordered">
+    <tr>
+        <th>Total Points For Player at end of Quarter</th>
+        <th>Total Points For Pokemon at end of Quarter</th>
+       
+    </tr>
     <tr>
         <td>@Session["Comp"]</td>
-    </tr>
-
-    @foreach (var item in ViewBag.Player)
-    {
-        <tr>
-
-            <td>@item</td>
-        </tr>
-
-    }
-    <tr>
         <td>@Session["User"]</td>
     </tr>
-
 </table>
 }
 
 @if (ViewBag.Over != "yes")
 {
-    <a href="~/GamePlay/QuarterSelector">Move on to the Next Quarter</a>
+    <center>
+        <button class="button"><a href="~/GamePlay/QuarterSelector">Play Next Quarter?</a></button>
+    </center>
 }
 else
 {
-    <a href="~/GamePlay/GameplayResult">Move to end of OverTime</a>
+    <center>
+    <button class="button"><a href="~/GamePlay/GameplayResult">Move to end of OverTime</a></button>
+    </center>
 }
 
-<a href="~/Home/PokeJam">Quit</a>
+<center>
+    <button class="button"><a href="~/Home/PokeJam">Quit</a></button>
+</center>
+<br />
+<center>
+    <img src="~/Content/Zapdos.png" />
+</center>
+
+<html>
+<head>
+    <style>
+        #customers {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #poop td, #poop th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #poop tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #poop tr:hover {
+            background-color: #ddd;
+        }
+
+        #poop th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: red;
+            color: white;
+        }
+
+            .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    
+
+    </style>
+</head>
+</html>

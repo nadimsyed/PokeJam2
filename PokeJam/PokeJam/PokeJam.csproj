@@ -274,6 +274,7 @@
     <Content Include="Content\Pokebackground1.css" />
     <Content Include="Content\pokeball.png" />
     <Content Include="Content\Primeape.png" />
+    <Content Include="Content\Zapdos.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
