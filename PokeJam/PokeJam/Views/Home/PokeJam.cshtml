@@ -3,12 +3,16 @@
     ViewBag.Title = "PokeJam";
 }
 
-<img src="~/Content/a16.jpg" height="400" width="1200"/>
+<img id="poopie" src="~/Content/a16.jpg" height="400" width="1150" />
 
 <br />
 <html>
 <head>
     <style>
+        #poopie {
+            margin-right: 5px;
+        }
+
         .button {
             background-color: black;
             border: none;
@@ -20,6 +24,12 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+        }
+
+        .btn-danger {
+            width: 3000px;
+            height: 130px;
+            margin-left: 23%;
         }
     </style>
 </head>
@@ -57,6 +67,9 @@
             display: table;
             clear: both;
         }
+
+        .input {
+        }
     </style>
 </head>
 <body>
@@ -64,22 +77,17 @@
     <div class="row">
         <div class="column" style="background-color:#aaa;">
             <img src="~/Content/a14.jpg" style="height: 300px; width:auto;" />
-           
+
         </div>
         <div class="column" style="background-color:#bbb;">
             <form action="~/GamePlay/SinglePlayer/" method="post">
-                <input type="submit" name="play" value="Single" />
+                <input class="button btn-danger" type="submit" name="play" value="Single" />
             </form>
             <form action="~/GamePlay/Tier1/" method="post">
-                <input type="submit" name="play" value="Tournament" />
+                <input class="button btn-danger" type="submit" name="play" value="Tournament" />
             </form>
         </div>
     </div>
 
 </body>
 </html>
-
-
-
-
-
