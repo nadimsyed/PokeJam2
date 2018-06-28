@@ -2,17 +2,19 @@
 <h2>Coach Your Player for Quarter @Session["Quarter"]</h2>
 
 <form action="~/GamePlay/NumberCrunch" method="post" onsubmit="return CheckShot() && Check() && totalVal()">
-
+    <img alt="File:107Hitmonchan.png" src="//archives.bulbagarden.net/media/upload/a/a3/107Hitmonchan.png" class="pull-right" width="431" height="431">
     <h3>Distribute Your Characters Shot Chance</h3>
     <h4>Drag the Sliders to Display the Current Value.</h4>
+
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="34" class="slider" id="threePointer" name="ThreePoint" onchange="totalVal()">
-        <p>Three-Pointer: <span id="demo"></span></p> 
+        <p>Three-Pointer: <span id="demo"></span></p>
     </div>
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="33" class="slider" id="midRange" name="MidRange" onchange="totalVal()">
         <p>Mid-Range: <span id="demo1"></span></p>
     </div>
+
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="33" class="slider" id="paint" name="Paint" onchange="totalVal()">
         <p>In-The-Paint: <span id="demo2"></span></p>
