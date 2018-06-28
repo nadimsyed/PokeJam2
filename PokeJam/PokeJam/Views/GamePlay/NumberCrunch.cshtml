@@ -20,8 +20,8 @@ else if (ViewBag.Over == "yes")
 {
     <table id="poop"class="table table-bordered">
         <tr>
-            <th>Play's for Pokemon</th>
             <th>Play's for Player</th>
+            <th>Play's for Pokemon</th>
         </tr>
         @for(int i = 0; i < ViewBag.Player.Count; i++)
         {
@@ -36,26 +36,28 @@ else if (ViewBag.Over == "yes")
                 <th>Total Points For Player at end of Quarter</th>
                 <th>Total Points For Pokemon at end of Quarter</th>
             </tr>
-        <tr>
-            <td>@Session["Comp"]</td>
-            <td>@Session["User"]</td>
-        </tr>
+            <tr>
+                <td>@Session["User"]</td>
+                <td>@Session["Comp"]</td>
+
+            </tr>
     </table>
 }
 else if ((string)Session["Winner"] == "Computer")
 {
 <table id="poop"class="table table-bordered">
     <tr>
-        <th>Play's for Player</th>
         <th>Play's for Pokemon</th>
+        <th>Play's for Player</th>
+
     </tr>
     @for (int i = 0; i < ViewBag.Player.Count; i++)
     {
-        <tr>
-            <td>@ViewBag.Player[i]</td>
-            <td>@ViewBag.Computer[i]</td>
+    <tr>
+        <td>@ViewBag.Computer[i]</td>
+        <td>@ViewBag.Player[i]</td>
 
-        </tr>
+    </tr>
     }
   </table>
   <table id="poop"class="table table-bordered">

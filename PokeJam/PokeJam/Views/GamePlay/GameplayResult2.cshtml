@@ -13,15 +13,15 @@ Player's Score: @Session["User"]
 
 @if (ViewBag.Truth == "True")
 {
-    <a href="~/GamePlay/TournamentNext">Move?</a>
+<a href="~/GamePlay/TournamentNext">Continue</a>
 }
 else if (ViewBag.Truth == "False")
 {
-    <a href="~/GamePlay/TournamentLoss">Move?</a>
+<a href="~/GamePlay/TournamentLoss">Continue</a>
 }
 else if (ViewBag.Truth == "Tie")
 {
-    <a href="~/GamePlay/OvertimeStart">Move?</a>
+<a href="~/GamePlay/OvertimeStart">Continue</a>
 }
 
 
