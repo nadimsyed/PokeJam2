@@ -403,7 +403,16 @@ namespace PokeJam.Controllers
 
         public ActionResult ViewStats()
         {
-            int charID = (int)Session["Char"];
+            int charID;
+            try
+            {
+                charID = (int)Session["Char"];
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("Index");
+            }
             List<Character> characters = (from c in db.Characters
                                           where c.CharID == charID
                                           select c).ToList();
