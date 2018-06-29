@@ -2,31 +2,50 @@
 @{
     ViewBag.Title = "SinglePlayer";
 }
-
-<h2>Single Player Mode</h2>
-
-<form action="~/GamePlay/HeadsTailsSingle/" method="post">
-
-    Choose your opponent
-    <select name="pokemon">
-        @for (int i = 0; i < ViewBag.All.Count; i++)
-        {
-            var pokemon = ViewBag.All[i];
-            <option value="@pokemon.PokeID">@pokemon.PokeName</option>
-        }
-    </select>
-    <br />
-    <br />
-    <br />
-
-    Decide Who Goes First. What's Your Pick<br /><br />
-
-    <input type="submit" name="Coin" value="Heads" />
-    <input type="submit" name="Coin" value="Tails" />
-</form>
-<br />
-<br />
-
 <center>
-    <img src="~/Content/a6.jpg" height="450" width="500" />
+    <h2>Single Player Mode</h2>
+
+    <form action="~/GamePlay/HeadsTailsSingle/" method="post">
+
+        <h3>Choose your opponent</h3>
+        <select class="dropdown" name="pokemon">
+            @for (int i = 0; i < ViewBag.All.Count; i++)
+            {
+                var pokemon = ViewBag.All[i];
+                <option value="@pokemon.PokeID">@pokemon.PokeName</option>
+            }
+        </select>
+        <br />
+        <br />
+
+        <h3>Decide Who Goes First. What's Your Pick?</h3><br /><br />
+
+        <input class="btn-danger" type="submit" name="Coin" value="Heads" />
+        <input class="btn-danger" type="submit" name="Coin" value="Tails" />
+    </form>
+    <br />
 </center>
+<center>
+    <img src="~/Content/a6.jpg" height="450" width="650" />
+</center>
+
+<style>
+    .dropdown {
+        background-color: red;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .btn-danger {
+        height: 50px;
+        width: 75px;
+    }
+</style>

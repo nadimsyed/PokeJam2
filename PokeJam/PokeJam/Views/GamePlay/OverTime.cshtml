@@ -2,9 +2,9 @@
 @{
     ViewBag.Title = "OverTime";
 }
-
-<h2>OverTime</h2>
-
+<center>
+    <h2>OverTime!</h2>
+</center>
 @if ((string)Session["Winner"] == "Player")
 {
     <table class="table table-bordered">
@@ -54,7 +54,6 @@ else if ((string)Session["Winner"] == "Computer")
         @foreach (var item in ViewBag.Computer)
         {
             <tr>
-
                 <td>@item</td>
             </tr>
 
@@ -66,10 +65,8 @@ else if ((string)Session["Winner"] == "Computer")
         @foreach (var item in ViewBag.Player)
         {
             <tr>
-
                 <td>@item</td>
             </tr>
-
         }
         <tr>
             <td>@Session["User"]</td>
@@ -77,8 +74,16 @@ else if ((string)Session["Winner"] == "Computer")
 
     </table>
 }
+<center>
+    <img src="~/Content/bulbasaur.jpg" />
+</center>
+<button class="bg-danger"><a href="~/GamePlay/QuarterSelector">Move on to the Next Quarter</a></button>
+<button class="btn-danger"><a href="~/Home/PokeJam">Quit</a></button>
 
-
-
-<a href="~/GamePlay/QuarterSelector">Move on to the Next Quarter</a>
-<a href="~/Home/PokeJam">Quit</a>
+<style>
+    .btn-danger {
+        height: 60px;
+        width: 145px;
+        background-color: black;
+    }
+</style>

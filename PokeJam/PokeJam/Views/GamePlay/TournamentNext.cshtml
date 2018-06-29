@@ -1,21 +1,23 @@
-﻿
-@{
-    ViewBag.Title = "TournamentNext";
-}
-<h2>Congratulations! You've Made it to the Next Tier!</h2>
+﻿<center>
+    @{
+        ViewBag.Title = "TournamentNext";
+    }
+    <h2>Congratulations! You've Made it to the Next Tier!</h2>
 
+    <button class="btn-danger"><a href="@ViewBag.Redirect">Continue</a></button><br /><br />
+    <button class="btn-danger"><a href="~/Home/PokeJam/">Forfeit and Go Home</a></button>
+    <br />
+    <br />
 
-<button class="btn-danger"><a href="@ViewBag.Redirect">Continue</a></button>
-<button><a href="~/Home/PokeJam/">Forfeit Round and Go Home</a></button>
-<br />
-<br />
-
-<center>
-    <img src="~/Content/Charizard.png" height="600" width="500"/>
+    <center>
+        <img src="~/Content/Charizard.png" height="600" width="500" />
+    </center>
 </center>
+
 <style>
     .btn-danger {
-        height: 50px;
-        width: 75px;
+        height: 60px;
+        width: 145px;
+        background-color: black;
     }
 </style>

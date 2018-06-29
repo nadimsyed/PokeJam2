@@ -4,80 +4,80 @@
 
 <h2>@ViewBag.Error</h2>
 <h2>@ViewBag.ErrorDescription</h2>
+<center>
+    <html>
+    <head>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
 
-<html>
-<head>
-    <style>
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
 
-        td, th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h2>Here's an example of what your player can look like:</h2>
+        </center>
+        <table>
+            <tr>
+                <th>NBA Star</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Three-Point</th>
+                <th>Mid-Range</th>
+                <th>Paint</th>
+                <th>Steal</th>
+                <th>Block</th>
+            </tr>
+            <tr>
+                <td>Lebron James</td>
+                <td>80</td>
+                <td>250</td>
+                <td>60</td>
+                <td>60</td>
+                <td>65</td>
+                <td>63</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>Stephen Curry</td>
+                <td>75</td>
+                <td>190</td>
+                <td>67</td>
+                <td>60</td>
+                <td>45</td>
+                <td>58</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td>James Harden</td>
+                <td>77</td>
+                <td>220</td>
+                <td>62</td>
+                <td>58</td>
+                <td>50</td>
+                <td>60</td>
+                <td>40</td>
+            </tr>
+        </table>
+        <br />
+        <br />
 
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
-    </style>
-</head>
-<body>
-    <center>
-        <h2>Here's an example of what your player can look like:</h2>
-    </center>
-    <table>
-        <tr>
-            <th>NBA Star</th>
-            <th>Height</th>
-            <th>Weight</th>
-            <th>Three-Point</th>
-            <th>Mid-Range</th>
-            <th>Paint</th>
-            <th>Steal</th>
-            <th>Block</th>
-        </tr>
-        <tr>
-            <td>Lebron James</td>
-            <td>80</td>
-            <td>250</td>
-            <td>60</td>
-            <td>60</td>
-            <td>65</td>
-            <td>63</td>
-            <td>60</td>
-        </tr>
-        <tr>
-            <td>Stephen Curry</td>
-            <td>75</td>
-            <td>190</td>
-            <td>67</td>
-            <td>60</td>
-            <td>45</td>
-            <td>58</td>
-            <td>33</td>
-        </tr>
-        <tr>
-            <td>James Harden</td>
-            <td>77</td>
-            <td>220</td>
-            <td>62</td>
-            <td>58</td>
-            <td>50</td>
-            <td>60</td>
-            <td>40</td>
-        </tr>
-    </table>
-    <br />
-    <br />
-
-</body>
+    </body>
 </html>
 
-<button type="button" ><a href="~/Home/CreatePlayerStart">Create a Character</a></button>
+<button id="Create"type="button" class="bg-success"><a href="~/Home/CreatePlayerStart">Create a Character</a></button>
 
 <h2>Clicking the Character's Name Will Allow You to Play with that Character</h2>
 <table class="table">
@@ -108,40 +108,86 @@
         </th>
     </tr>
 
-            @foreach (var item in ViewBag.Characters)
+    @foreach (var item in ViewBag.Characters)
             {
-                <tr>
-                    <td>
-                        <form action="~/Home/PokeJam" method="post">
-                            <input type="hidden" name="CharID" value="@item.CharID" />
-                            <input type="submit" name="CharName" value="@item.CharName" />
-                        </form>
-                    </td>
-                    <td>
-                        @item.Height
-                    </td>
-                    <td>
-                        @item.Weight
-                    </td>
-                    <td>
-                        @item.ThreePoint %
-                    </td>
-                    <td>
-                        @item.FieldGoal %
-                    </td>
-                    <td>
-                        @item.Paint %
-                    </td>
-                    <td>
-                        @item.Steal %
-                    </td>
-                    <td>
-                        @item.Block %
-                    </td>
-                    <td>
-                        <a href="/Characters/Delete/@item.CharID">Delete</a>
-                    </td>
-                </tr>
-            }
+        <tr>
+            <td>
+                <form action="~/Home/PokeJam" method="post">
+                    <input class="bg-danger" type="hidden" name="CharID" value="@item.CharID" />
+                    <input class="btn-danger" type="submit" name="CharName" value="@item.CharName" />
+                </form>
+            </td>
+            <td>
+                @item.Height
+            </td>
+            <td>
+                @item.Weight
+            </td>
+            <td>
+                @item.ThreePoint %
+            </td>
+            <td>
+                @item.FieldGoal %
+            </td>
+            <td>
+                @item.Paint %
+            </td>
+            <td>
+                @item.Steal %
+            </td>
+            <td>
+                @item.Block %
+            </td>
+            <td>
+                <a href="/Characters/Delete/@item.CharID">Delete</a>
+            </td>
+        </tr>
+    }
 </table>
 
+</center>
+<style>
+    #Create {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: black;
+        border: none;
+        color: green;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 350px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    .button:hover span {
+        padding-right: 25px;
+    }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+</style>
+
+<center>
+    <img src="~/Content/ice.png" />
+</center>

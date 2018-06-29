@@ -2,9 +2,9 @@
 @{
     ViewBag.Title = "OvertimeStart";
 }
-
-<h2>OvertimeStart</h2>
-
+<center>
+    <h2>OvertimeStart!</h2>
+</center>
 
 <form action="~/GamePlay/NumberCrunch" method="post">
     Distribute 100 Points Across the Three Types of Shot to Decide how your Character Will Play this Quarter<br /><br />
@@ -16,7 +16,7 @@
     Steals: <input type="number" name="Steal" value="50" min="0" max="100" /><br />
     Blocks: <input type="number" name="Block" value="50" min="0" max="100" /><br /><br />
 
-    <input type="submit" name="submit" value="Submit Distributions" onclick="return CheckShot() && Check()" />
+    <input class="btn-danger" type="submit" name="submit" value="Submit Distributions" onclick="return CheckShot() && Check()" />
     <input type="hidden" name="overtime" value="yes" />
 </form>
 
@@ -44,7 +44,19 @@
         }
     }
 
-
-
+ 
 </script>
-<a href="~/Home/PokeJam">Quit</a>
+
+    <button class="btn-danger"><a href="~/Home/PokeJam">Quit</a></button>
+
+
+    <img src="~/Content/charmander.png" class="pull-right" height="350" width="300" />
+
+
+<style>
+    .btn-danger {
+        height: 60px;
+        width: 145px;
+        background-color: black;
+    }
+</style>

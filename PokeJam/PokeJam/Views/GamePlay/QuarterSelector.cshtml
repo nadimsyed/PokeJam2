@@ -1,29 +1,29 @@
 
-<h2>Coach Your Player for Quarter @Session["Quarter"]</h2>
+    <h2>Coach Your Player for Quarter @Session["Quarter"]</h2>
 
 <form action="~/GamePlay/NumberCrunch" method="post" onsubmit="return CheckShot() && Check() && totalVal()">
-    <img alt="File:107Hitmonchan.png" src="//archives.bulbagarden.net/media/upload/a/a3/107Hitmonchan.png" class="pull-right" width="431" height="431">
+    <img src="~/Content/Squirtle.png" class="pull-right" width="431" height="431">
     <h3>Distribute Your Characters Shot Chance</h3>
     <h4>Drag the Sliders to Display the Current Value.</h4>
 
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="34" class="slider" id="threePointer" name="ThreePoint" onchange="totalVal()">
-        <p>Three-Pointer: <span id="demo"></span></p>
+        <p>Three-Pointer %: <span id="demo"></span></p>
     </div>
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="33" class="slider" id="midRange" name="MidRange" onchange="totalVal()">
-        <p>Mid-Range: <span id="demo1"></span></p>
+        <p>Mid-Range %: <span id="demo1"></span></p>
     </div>
 
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="33" class="slider" id="paint" name="Paint" onchange="totalVal()">
-        <p>In-The-Paint: <span id="demo2"></span></p>
+        <p>In-The-Paint %: <span id="demo2"></span></p>
     </div>
     <div id="grandTotalDiv">
         <p>Grand Total: <span id="grandTotal"></span></p>
 
     </div>
-
+    <br /><br />
     <span id="span">
 
     </span>
@@ -31,11 +31,11 @@
 
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="50" class="slider" id="steal" name="Steal" onchange="totalVal1()">
-        <p>Steal: <span id="demo3"></span></p>
+        <p>Steal %: <span id="demo3"></span></p>
     </div>
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="50" class="slider" id="block" name="Block" onchange="totalVal1()">
-        <p>Block: <span id="demo4"></span></p>
+        <p>Block %: <span id="demo4"></span></p>
     </div>
     <div id="grandTotalDiv1">
         <p>Defense Total: <span id="grandTotal1"></span></p>
@@ -45,7 +45,7 @@
 
     </span>
 
-    <input type="submit" name="submit" value="Submit Distributions" />
+    <input class="btn-danger"type="submit" name="submit" value="Submit Distributions" />
 </form>
 
 <script>
@@ -205,5 +205,10 @@
             background: #4CAF50;
             cursor: pointer;
         }
+        .btn-danger{
+            height:50px;
+            width:175px;
+        }
     </style>
 </head>
+<br /><br />

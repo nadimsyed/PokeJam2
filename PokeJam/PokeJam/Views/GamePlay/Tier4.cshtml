@@ -1,4 +1,4 @@
-﻿Congratulations you've made it to Tier 4!
+﻿
 @{
     ViewBag.Title = "Tier 4";
 }
@@ -8,7 +8,7 @@
     <form action="~/GamePlay/HeadsTailsSingle/" method="post">
 
         <h3>Choose your opponent</h3>
-        <select class="danger" name="pokemon">
+        <select class="dropdown" name="pokemon">
             @for (int i = 0; i < ViewBag.Poke.Count; i++)
             {
                 var pokemon = ViewBag.Poke[i];
@@ -27,7 +27,27 @@
 
     <br />
     <br />
-    <center>
-        <img src="~/Content/a11.jpg" height="430" width="550" />
-    </center>
+    
+        <img src="~/Content/a11.jpg" height="490" width="700" />
+    
 </center>
+<style>
+    .dropdown {
+        background-color: red;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .btn-danger {
+        height: 50px;
+        width: 75px;
+    }
+    </style>

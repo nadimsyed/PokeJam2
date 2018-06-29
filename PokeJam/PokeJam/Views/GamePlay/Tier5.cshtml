@@ -1,34 +1,35 @@
 ﻿@{
     ViewBag.Title = "Tier 5";
 }
-<h3>You've made it to the final tier!</h3>
-<h2>Tier 5</h2>
-
-<form action="~/GamePlay/HeadsTailsSingle/" method="post">
-
-    <h3>Choose your opponent</h3>
-    <select class="dropdown"name="pokemon">
-        @for (int i = 0; i < ViewBag.Poke.Count; i++)
-        {
-            var pokemon = ViewBag.Poke[i];
-            <option value="@pokemon.PokeID">@pokemon.PokeName</option>
-        }
-    </select>
-    <br />
-    <br />
-    <br />
-
-    <h3>Decide Who Goes First. What's Your Pick</h3><br /><br />
-
-    <input class="btn-danger"type="submit" name="Coin" value="Heads" />
-    <input class="btn-danger"type="submit" name="Coin" value="Tails" />
-</form>
-
-<br />
-<br />
-
 <center>
-    <img src="~/Content/a12.jpg" height="430" width="550" />
+    <h3>You've made it to the final tier!</h3>
+    <h2>Tier 5</h2>
+
+    <form action="~/GamePlay/HeadsTailsSingle/" method="post">
+
+        <h3>Choose your opponent</h3>
+        <select class="dropdown" name="pokemon">
+            @for (int i = 0; i < ViewBag.Poke.Count; i++)
+            {
+                var pokemon = ViewBag.Poke[i];
+                <option value="@pokemon.PokeID">@pokemon.PokeName</option>
+            }
+        </select>
+        <br />
+        <br />
+        <br />
+
+        <h3>Decide Who Goes First. What's Your Pick</h3><br /><br />
+
+        <input class="btn-danger" type="submit" name="Coin" value="Heads" />
+        <input class="btn-danger" type="submit" name="Coin" value="Tails" />
+    </form>
+
+    <br />
+    <br />
+
+
+    <img src="~/Content/a12.jpg" height="490" width="750" />
 </center>
 
 

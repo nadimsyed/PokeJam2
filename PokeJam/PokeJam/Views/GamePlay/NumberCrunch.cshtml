@@ -1,18 +1,18 @@
-﻿
-@{
-    ViewBag.Title = "NumberCrunch";
-}
+﻿<center>
+    @{
+        ViewBag.Title = "NumberCrunch";
+    }
 
-@if (ViewBag.Over != "yes")
-{
-    <h2>Quarter @Session["Quarter"]</h2>
-}
-else if (ViewBag.Over == "yes")
-{
-    <h2>Over Time!</h2>
+    @if (ViewBag.Over != "yes")
+    {
+        <h2>Quarter @Session["Quarter"]</h2>
+    }
+    else if (ViewBag.Over == "yes")
+    {
+        <h2>Over Time!</h2>
 
-}
-
+    }
+</center>
 <h1>@ViewBag.Error</h1>
 <h1>@ViewBag.ErrorDescription</h1>
 

@@ -1,31 +1,40 @@
-﻿
-@{
-    ViewBag.Title = "GameplayResult";
-}
+﻿<center>
+    @{
+        ViewBag.Title = "GameplayResult";
+    }
 
-<h2>@ViewBag.Winner</h2>
+    <h2>@ViewBag.Winner</h2>
 
-Player's Score: @Session["User"]
-Pokemon's: @Session["Comp"]
+    <h3>
+        Player's Score: @Session["User"]
+        Pokemon's: @Session["Comp"]
+    </h3>
 
-@if (ViewBag.Truth == "True")
-{
-    <a href="~/GamePlay/TournamentNext">Continue</a>
-}
-else if (ViewBag.Truth == "False")
-{
-    <a href="~/GamePlay/TournamentLoss">Continue</a>
-}
-else if (ViewBag.Truth == "Tie")
-{
-    <a href="~/GamePlay/OvertimeStart">Continue</a>
-}
+    @if (ViewBag.Truth == "True")
+    {
+        <button class="btn-danger"><a href="~/GamePlay/TournamentNext" class="btn-danger">Continue</a></button>
+    }
+    else if (ViewBag.Truth == "False")
+    {
+        <button class="btn-danger"><a href="~/GamePlay/TournamentLoss" class="btn-danger">Continue</a></button>
+    }
+    else if (ViewBag.Truth == "Tie")
+    {
+        <button class="btn-danger"><a href="~/GamePlay/OvertimeStart" class="btn-danger">Continue</a></button>
+    }
 
-
-
-
-<br /><br /><a href="~/Home/PokeJam">@*Forfeit Round and*@ Go Home</a>
-
-<center>
+    <br /><br /><button class="btn-danger"><a href="~/Home/PokeJam" >@*Forfeit Round and*@ Go Home</a></button>
+    <br />
+    <br />
+    <br />
     <img src="~/Content/Primeape.png" />
 </center>
+
+
+<style>
+    .btn-danger {
+        height: 60px;
+        width: 145px;
+        background-color:black;
+    }
+</style>
