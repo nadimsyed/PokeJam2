@@ -6,26 +6,59 @@
     <h2>OvertimeStart!</h2>
 </center>
 
-<form action="~/GamePlay/NumberCrunch" method="post">
-    Distribute 100 Points Across the Three Types of Shot to Decide how your Character Will Play this Quarter<br /><br />
-    Three Pointers: <input type="number" name="ThreePoint" value="34" min="0" max="100" /><br />
-    Mid-Range Shots: <input type="number" name="MidRange" value="33" min="0" max="100" /><br />
-    In-the-Paint Shots: <input type="number" name="Paint" value="33" min="0" max="100" /><br /><br /><br />
+<form action="~/GamePlay/NumberCrunch" method="post" onsubmit="return CheckShot() && Check() && totalVal()">
+    <img src="~/Content/Squirtle.png" class="pull-right" width="431" height="431">
+    <h3>Distribute Your Characters Shot Chance</h3>
+    <h4>Drag the Sliders to Display the Current Value.</h4>
 
-    Distribute 100 Points Across the Two Types of Defensive Options for the Quarter<br /><br />
-    Steals: <input type="number" name="Steal" value="50" min="0" max="100" /><br />
-    Blocks: <input type="number" name="Block" value="50" min="0" max="100" /><br /><br />
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="34" class="slider" id="threePointer" name="ThreePoint" onchange="totalVal()">
+        <p>Three-Pointer %: <span id="demo"></span></p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="33" class="slider" id="midRange" name="MidRange" onchange="totalVal()">
+        <p>Mid-Range %: <span id="demo1"></span></p>
+    </div>
 
-    <input class="btn-danger" type="submit" name="submit" value="Submit Distributions" onclick="return CheckShot() && Check()" />
-    <input type="hidden" name="overtime" value="yes" />
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="33" class="slider" id="paint" name="Paint" onchange="totalVal()">
+        <p>In-The-Paint %: <span id="demo2"></span></p>
+    </div>
+    <div id="grandTotalDiv">
+        <p>Grand Total: <span id="grandTotal"></span></p>
+
+    </div>
+    <br /><br />
+    <span id="span">
+
+    </span>
+    <h3>Distribute Your Characters Defensive Options Chance</h3>
+
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="steal" name="Steal" onchange="totalVal1()">
+        <p>Steal %: <span id="demo3"></span></p>
+    </div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="block" name="Block" onchange="totalVal1()">
+        <p>Block %: <span id="demo4"></span></p>
+    </div>
+    <div id="grandTotalDiv1">
+        <p>Defense Total: <span id="grandTotal1"></span></p>
+    </div>
+
+    <span id="span2">
+
+    </span>
+
+    <input class="btn-danger" type="submit" name="submit" value="Submit Distributions" />
 </form>
 
 <script>
     function CheckShot() {
-        var a = parseInt(document.getElementById("ThreePoint").value );
-        var b = parseInt(document.getElementById("MidRange").value );
-        var c = parseInt(document.getElementById("Paint").value );
-        if ((100 - (a +b+c) == 0)) {
+        var a = parseInt(document.getElementById("threePointer").value);
+        var b = parseInt(document.getElementById("midRange").value);
+        var c = parseInt(document.getElementById("paint").value);
+        if ((100 - (a + b + c) === 0)) {
             return true;
         }
         else {
@@ -34,8 +67,8 @@
 
     }
     function Check() {
-        var d = parseInt( document.getElementById("Steal").value );
-        var e = parseInt(document.getElementById("Block").value);
+        var d = parseInt(document.getElementById("steal").value);
+        var e = parseInt(document.getElementById("block").value);
         if ((100 - (d + e) == 0)) {
             return true;
         }
@@ -44,19 +77,147 @@
         }
     }
 
- 
+
+    var threePointer = document.getElementById("threePointer");
+    var output = document.getElementById("demo");
+    output.innerHTML = threePointer.value;
+
+    threePointer.oninput = function () {
+        output.innerHTML = this.value;
+    }
+
+    var midRange = document.getElementById("midRange");
+    var output1 = document.getElementById("demo1");
+    output1.innerHTML = midRange.value;
+
+    midRange.oninput = function () {
+        output1.innerHTML = this.value;
+    }
+
+    var layup = document.getElementById("paint");
+    var output2 = document.getElementById("demo2");
+    output2.innerHTML = layup.value;
+
+    layup.oninput = function () {
+        output2.innerHTML = this.value;
+    }
+
+    function totalVal() {
+        var output3 = document.getElementById("grandTotal");
+        var total = +threePointer.value + +midRange.value + +layup.value
+        if (total > 100) {
+            document.getElementById("span").innerHTML = "You can at max distribute 100 points total to your shots";
+            return false;
+        }
+        else {
+            output3.innerHTML = total;
+            document.getElementById("span").innerHTML = "";
+            return true;
+        }
+    }
+
+    var steal = document.getElementById("steal");
+    var output4 = document.getElementById("demo3");
+    output4.innerHTML = steal.value;
+
+    steal.oninput = function () {
+        output4.innerHTML = this.value;
+    }
+
+    var block = document.getElementById("block");
+    var output5 = document.getElementById("demo4");
+    output5.innerHTML = block.value;
+
+    block.oninput = function () {
+        output5.innerHTML = this.value;
+    }
+
+    function totalVal1() {
+        var output6 = document.getElementById("grandTotal1");
+        var total1 = +steal.value + +block.value
+        if (total1 > 100) {
+            document.getElementById("span2").innerHTML = "You can at max distribute 100 points total to your defensive choices";
+            return false;
+        }
+        else {
+            output6.innerHTML = total1;
+            document.getElementById("span2").innerHTML = "";
+            return true;
+        }
+    }
+
 </script>
 
-    <button class="btn-danger"><a href="~/Home/PokeJam">Quit</a></button>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .slidecontainer {
+            width: 100%;
+        }
 
+        <meta name="viewport" content="width=device-width, initial-scale=1" > <style > .slidecontainer {
+            width: 100%;
+        }
 
-    <img src="~/Content/charmander.png" class="pull-right" height="350" width="300" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" > <style > .slidecontainer {
+            width: 100%;
+        }
 
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
 
-<style>
-    .btn-danger {
-        height: 60px;
-        width: 145px;
-        background-color: black;
-    }
-</style>
+            .slider:hover {
+                opacity: 1;
+            }
+
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                background: black;
+                cursor: pointer;
+            }
+
+        #threePointer {
+            background: yellow;
+        }
+
+        #midRange {
+            background: red;
+        }
+
+        #paint {
+            background: blue;
+        }
+
+        #steal {
+            background: pink;
+        }
+
+        #block {
+            background: green;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .btn-danger {
+            height: 50px;
+            width: 175px;
+        }
+    </style>
+</head>
+<br /><br />
